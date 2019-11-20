@@ -1,0 +1,152 @@
+/*
+* FOOTER
+*/
+
+.site-footer__copy-blocks {
+    display:flex;
+    flex-direction: column;
+
+    @media screen and (min-width:768px) {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        
+        .site-footer__copy-block {
+            margin:0 0 $su/2 0;
+        }
+    }
+
+    
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+.site-footer__copy-block {
+    max-width:760px;
+    z-index: 5;
+    padding: $su/2 $su;
+    text-align: center;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+        padding:$su;
+    }
+
+    &__logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+
+        a {
+            transition: opacity .2s ease-out;
+            margin:0 $su/2;
+
+            &:hover, &:focus {
+                opacity:0.8;
+            }
+        }
+    }
+
+    &--list-logos {
+        margin:0;
+        padding:$su;
+        background-color:white;
+        width:100%;
+        max-width:100%;
+        box-sizing: border-box;
+
+        &:first-of-type {
+            padding:$su*4 $su $su;
+        }
+    }
+
+    &--fondation-cite-miroir {
+        display:flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        img {
+            display: block;
+            height: auto;
+            width: 100%;
+            max-width: 100%;
+
+            @media screen and (min-width:600px) {
+                width:auto;
+            }
+        }
+    }
+}
+
+.site-footer__press {
+
+    a {
+        color:white;
+    
+        &:hover, &:focus {
+            color:$red;
+        }
+    }
+}
+
+.site-footer__big-txt {
+    font-size: 1rem;
+    max-width: 36em;
+    margin: 0 auto $su auto;
+
+    @media screen and (min-width:1080px) {
+        font-size:1.4rem;
+    }
+}
+
+.site-footer__copy-img {
+    max-width:100%;
+}
+
+.site-footer__list-logos {
+    display:inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin:0;
+    padding:0;
+    background:white;
+    
+    li {
+        background-color:white;
+        padding:$su/2 8px;
+        margin:0;
+        display:flex;
+        align-items: center;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+
+        &:hover, &:focus {
+            
+            img {
+                transform:scale(1.02);
+            }
+        }
+
+        &:active {
+            
+            img {
+                transform:scale(1);
+            }
+        }
+
+        img {
+            transition:transform 150ms ease-out;
+        }
+    }
+
+    img {
+        max-width:100px;
+        max-height: 100px;
+    }
+}

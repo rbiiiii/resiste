@@ -1,0 +1,54 @@
+<header class="site-header">
+	{{ if .IsHome }}
+		<div class="site-header__group">
+			<div class="loader-wrapper">
+				<div class="loader"></div> 
+			</div>
+			<img class="site-header__bg" src="{{.Site.BaseURL}}assets/img/darwin-loriginal-intro-bg.svg" alt="">
+			<a id="site-header__link-intro" class="scroll" href="{{.Site.BaseURL}}#site-header__organisation" title="Voir le contenu">
+				<picture>
+					<source type="image/webp" srcset="/assets/img/darwin-homme-intro.webp">
+					<source type="image/png" srcset="/assets/img/darwin-homme-intro.png">
+					<img class="site-header__homme-img" src="{{.Site.BaseURL}}assets/img/darwin-homme-intro.png" alt="" sizes="100vw">
+				</picture>
+				<picture>
+					<source type="image/webp" srcset="/assets/img/darwin-txt-intro.webp">
+					<source type="image/png" srcset="/assets/img/darwin-txt-intro.png">
+					<img class="site-header__txt-img" src="{{.Site.BaseURL}}assets/img/darwin-txt-intro.png" alt="" sizes="100vw">
+				</picture>
+			</a>
+		</div>
+	
+		<div class="site-header__copy-block" id="site-header__organisation">
+			<p>Une exposition réalisée par <strong>La Cité&nbsp;des&nbsp;sciences et de&nbsp;l’industrie - Paris</strong><br>en collaboration avec le <strong>Muséum&nbsp;national d’Histoire&nbsp;naturelle</strong></p>
+			<div class="site-header__copy-block__logos">
+				<a href="http://www.cite-sciences.fr">
+					<img src="{{.Site.BaseURL}}assets/img/logo-cite-sciences-industries.png" alt="logo Cité des sciences et de l'industrie">
+				</a>
+				<a href="https://www.mnhn.fr/">
+					<img src="{{.Site.BaseURL}}assets/img/logo-museum-national-histoire-naturelle.png" alt="logo Muséum national d'Histoire naturelle ">
+				</a>
+			</div>
+		</div>
+	{{ end }}
+</header>
+<div class="site-nav-wrapper">
+	<nav class="site-nav">
+		<input id="site-nav__control" class="hide" type="checkbox">
+		<label for="site-nav__control" class="site-nav__control-label">Menu</label>
+		<ul class="site-nav__list">
+			<li class="site-nav__item">
+				<a class="site-nav__link site-nav__link--internal scroll" href="{{.Site.BaseURL}}#intro">Intro</a>
+			</li>
+			<li class="site-nav__item">
+				<a class="site-nav__link site-nav__link--internal scroll" href="{{.Site.BaseURL}}#en-pratique">En pratique</a>
+			</li>
+			<li class="site-nav__item">
+				<a class="site-nav__link site-nav__link--internal scroll" href="{{.Site.BaseURL}}#animations">Animations</a>
+			</li>
+			<li class="site-nav__item">
+				<a class="site-nav__link" href="{{.Site.BaseURL}}activites-annexes">Activités annexes</a>
+			</li>
+		</ul>
+	</nav>
+</div>

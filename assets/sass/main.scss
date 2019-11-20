@@ -1,0 +1,40 @@
+$bg-dark: #222d34;
+$bg-medium: #3B4D57;
+$bg-light: #4c6470;
+
+$red: #db111d;
+$red-dark: #a32a31;
+
+$su: 20px; // spacing-unit
+
+$tw: 740px; // text-width
+$mw: 1120px; // max-width
+
+@font-face {
+    font-family: "ITC";
+    src:url('../assets/fonts/itc_avant_garde_gothic_medium-webfont.woff2') format('woff2'),
+        url('../assets/fonts/itc_avant_garde_gothic_medium-webfont.woff') format('woff');
+    unicode-range: 00A0 — 00FF;
+    font-weight:400;
+    font-display:swap;
+}
+
+@font-face {
+    font-family: "ITC-bold";
+    src:url('../assets/fonts/ITCAvantGardePro-Bold.woff2') format('woff2'),
+        url('../assets/fonts/ITCAvantGardePro-Bold.woff') format('woff');
+    unicode-range: 00A0 — 00FF;
+    font-weight: bold;
+    font-display:swap;
+}
+
+@import 'partials/_reset';
+@import 'partials/_mixins';
+@import 'partials/_layout';
+@import 'partials/_typo';
+@import 'partials/_header';
+@import 'partials/_nav';
+@import 'partials/_footer';
+@import 'partials/_main-content';
+@import 'partials/_single';
+@import 'partials/_modules';
