@@ -3,21 +3,9 @@
 */
 
 @mixin ff-r {
-    font-family: "ITC","Helvetica Neue",Helvetica,Arial,sans-serif;  
+    font-family: Helvetica, Arial, sans-serif;
 } 
 
 @mixin ff-b {
-    font-family: "ITC-bold","Helvetica Neue",Helvetica,Arial,sans-serif;  
+    font-family: "GOOD BRUSH", sans-serif;  
 } 
-
-@mixin block-mw {
-    max-width:840px;
-    margin-right:auto;
-    margin-left:auto;
-    padding:0 1.2rem;
-    box-sizing: border-box;
-
-    @media screen and (min-width:600px) {
-        padding:0 $su*2;        
-    }
-}

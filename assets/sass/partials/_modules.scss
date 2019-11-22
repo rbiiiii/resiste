@@ -10,62 +10,25 @@
 }
 
 a {
-    text-decoration: none;
-    color: $red;
-    transition: color 150ms ease-out;
+    
 
     &:hover, &:focus {
-        color:$red-dark;
+        
     }
 }
 
 .button, a.button {
-    display:inline-block;
-    padding:0.7em 1.2em;
-    text-decoration: none;
-    background-color: $red;
-    color:white;
-    clip-path: polygon(95.45% 89.81%, 3.73% 85.98%, 7.53% 7.94%, 99% 4.88%);
-    transition:150ms clip-path ease-out, 150ms background-color ease-out;
+    
 
     &:hover, &:focus {
-        clip-path: polygon(95% 89%, 3.73% 85.98%, 8.77% 13.5%, 100% 4.88%);
-        background-color: $red-dark;
+    
     }
 
     &:active {
-        clip-path: polygon(95.45% 89.81%, 3.73% 85.98%, 7.53% 7.94%, 99% 4.88%);
-        background-color: $red;
+
     }
 }
 
-#en-pratique, .animations__item--booking, .main-single {
-
-    li:not(.no-before) {
-        position:relative;
-        display:inline-block; 
-        margin-left: 1.75em;
-        width: calc(100% - #{$su*2});
-    
-        &:before {
-            content:"•";
-            display: inline-block;
-            margin-left: -0.7em;
-            padding-right: 0.3em;
-            color:$bg-light;
-        }
-    }
-    
-    li.no-before {
-        
-        @media screen and (min-width:1080px) {
-            background-color:$bg-medium;
-            padding:$su;
-            margin-bottom:$su*2;
-        }
-    }
-    
-    ul li ul li:last-child {
-        margin-bottom:0;
-    }
+iframe {
+    max-width: 100%;
 }

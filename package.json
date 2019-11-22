@@ -1,0 +1,33 @@
+{
+  "name": "resiste",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": [
+    "since 2014",
+    "> 1%",
+    "ie 10-11",
+    "not dead"
+  ],
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rbiiiii/resiste.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbiiiii/resiste/issues"
+  },
+  "homepage": "https://github.com/rbiiiii/resiste#readme",
+  "dependencies": {
+    "autoprefixer": "^9.7.2",
+    "postcss-cli": "^6.1.3"
+  }
+}

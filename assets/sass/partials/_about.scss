@@ -1,0 +1,27 @@
+#section-about {
+    background: white url("../assets/img/resiste-frise-persos.jpg") no-repeat center bottom;
+    border-bottom: 5px dashed $bleu-tm;
+
+    @media screen and (min-width: 1024px) {
+        padding:$su*4 0 400px;
+        background-position: 0 200%;
+        transition:background-position 400ms ease-in-out;
+
+        &.is-visible {
+            background-position: 0 100%;
+        }
+    }
+
+    .cols-2 {
+        max-width: $mw;
+        margin:0 auto;
+    }
+
+    .cols-2__col {
+        padding:0 $su*2;
+    }
+
+    p {
+        max-width: 560px;
+    }
+}

@@ -1,7 +1,7 @@
 baseURL = "https://www.resiste.be/"
 languageCode = "fr-be"
 title = "Résiste !"
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy", "taxonomyTerm", "sitemap", "RSS"]
 
 [params]
     description = "Le jeu coopératif pour résister ensemble et défendre la démocratie !"

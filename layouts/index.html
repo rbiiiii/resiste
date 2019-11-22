@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- TRAVIS IS OK -->
 <html lang="{{ $.Site.LanguageCode }}">
   <head>
     <meta charset="utf-8">
@@ -15,16 +14,31 @@
     <meta property="og:description" content='{{ .Site.Params.Description }}' />
     <meta property="og:image" content="{{ .Site.BaseURL }}assets/img/home-intro.jpg" />
     <meta property="og:site_name" content="{{ .Site.Title }}" />
-    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.PostCSS | resources.Minify | resources.Fingerprint }}
+    {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.PostCSS (dict "config" "postcss.config.js") | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" type="text/css" href="{{ $style.Permalink | relURL }}">
     {{ partial "site-favicon.html" . }}
   </head>
+
 	<body id="root">
+    
     <div class="site-wrapper">
-      {{ partial "site-header.html" .}}
-      <main class="site-main" id="site-main"></main>
-      {{ partial "site-footer.html" . }}
+
+        {{ partial "site-header.html" . }}
+
+        <main class="site-main" id="site-main">
+          
+          {{ partial "section-about.html" . }}
+          
+          {{ partial "section-technical.html" . }}
+          
+        </main>
+        
+        {{ partial "site-footer.html" . }}
+    
+        {{ partial "site-scripts.html" . }}
+
     </div>
-    {{ partial "site-scripts.html" . }}
+
   </body>
+
 </html>
