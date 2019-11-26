@@ -1,0 +1,31 @@
+#section-technical {
+    background:$bleu-gradient;
+    color:white;
+    padding: $su*4 $su;
+}
+
+.specs {
+
+    li {
+        display:flex;
+        align-items:center;
+
+        &:hover, &:focus {
+            
+            svg {
+                transform:scale(1.1);
+            } 
+        }
+    }
+
+    svg {
+        height:7.5em;
+        width:7.5em;
+        margin-right:0.75em;
+    }
+
+    span {
+        display:block;
+        font-size:1.4rem;
+    }
+}

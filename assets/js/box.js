@@ -1,12 +1,13 @@
-// Source credit: http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript
+// Inspired by => Source credit: http://thenewcode.com/279/Rotate-Elements-on-Scroll-with-JavaScript
 
 var cube = document.getElementById('cube'),
     scene = document.getElementById('scene'),
-    baseUnit = 70,
+    baseUnit = 75,
     deg = 0,
-    mouseX = 0;
+    mouseX = 0,
+    rotateFactor = 30;
 
-;(function(){
+(function(){
 
   var throttle = function(type, name, obj){
     var obj = obj || window;
@@ -26,6 +27,6 @@ var cube = document.getElementById('cube'),
 })();
 
 window.addEventListener("optimizedScroll", function(){
-  deg = baseUnit+window.pageYOffset/20;
+  deg = baseUnit + window.pageYOffset / rotateFactor;
   cube.style.transform = "rotate3d(10,2,2,-" + deg + "deg)";
 })

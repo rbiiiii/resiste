@@ -1,10 +1,53 @@
+.tm-logo-wrapper {
+    max-width: 1920px;
+    position: relative;
+}
+
+.tm-logo {
+    position: absolute;
+    right:0;
+    top:0;
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-right : 250px solid $bleu-tm;
+    border-bottom : 250px solid transparent;
+
+    &:hover, &:focus {
+        
+        img {
+            opacity:0.7
+        }
+    }
+    
+    &:active {
+        
+        img {
+            opacity:1;
+        }
+    }
+
+    img {
+        position: absolute;
+        top: 13px;
+        right: -240px;
+        z-index: 1;
+        width: 150px;
+        height:70px;
+        opacity:1;
+        transition: 150ms opacity ease-out;
+    }
+}
+
 #section-hero {
     position:relative;
     align-items: center;
+    padding-top:$su;
     
     @media screen and (min-width:1024px) {
         align-items: flex-start;
         justify-content: center;
+        padding-top:$su*2;
     }
 
     &:after {
@@ -49,12 +92,12 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    transform: scale(0.3) translateX(-50vw);
+    transform: scale(0.3) translateX(-10vw);
     position: relative;
     z-index: 5;
     
     @media screen and (min-width:400px) {
-        transform: scale(0.4) translateX(-25vw);
+        transform: scale(0.4) translateX(-10vw);
         margin-top:60px;
     }
     
@@ -106,15 +149,23 @@
 
 .site-logo {
     text-align: center;
-    margin-top:$su;
+    margin-top:28vw;
 
-    img {
-        max-width: 80%;
-        margin:0 auto $su auto;
+    @media screen and (min-width:480px) {
+        margin-top:20vw;
+    }
+
+    @media screen and (min-width:768px) {
+        margin-top:$su;
     }
 
     @media screen and (min-width:1024px) {
         text-align: left;
+    }
+    
+    img {
+        max-width: 80%;
+        margin:0 auto $su auto;
     }
 
     @media screen and (min-width:1280px) {
@@ -136,7 +187,7 @@
         right: 0;
         width: 100%;
         background:$bleu-gradient;
-        color:$white;
+        color:white;
     }
 
     @media screen and (min-width:1280px) {
@@ -149,7 +200,7 @@
         
         @media screen and (min-width:1024px) {
             grid-column: 2 / 3;
-            padding: $su*2 $su;
+            padding: $su*2 $su 0 $su;
         }
 
         @media screen and (min-width:1280px) {
@@ -158,14 +209,55 @@
     }
 
     .buttons {
-        
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin: $su*2 0;
+
         @media screen and (min-width:1024px) {
             grid-column: 1 / -1;
             grid-row-start: 2;
-            margin: $su auto $su*2 auto;
+            margin: $su*3 auto $su*3 auto;
+            flex-direction: row;
             
             a:first-of-type {
                 grid-column-start: 3;
+            }
+        }
+
+        a {
+            @include ff-b;
+            font-size:1.2rem;
+            color:$bleu-tm;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+            border: 3px dashed currentColor;
+            margin:$su;
+            padding: 0.5em;
+            box-shadow: 0 0 1.2em -0.1em;
+            transform:translateY(0);
+            transition: box-shadow 150ms ease-out, transform 150ms ease-out;
+
+            &:hover, &:focus {
+                box-shadow: 0 0 1.8em -0.1em;
+                transform:translateY(-4px);
+            }
+
+            &:active {
+                box-shadow: 0 0 0.6em -0.1em;
+                transform:translateY(0);
+            }
+
+            @media screen and (min-width:560px) {
+                font-size: 1.4rem;
+            }
+
+            @media screen and (min-width:1024px) {
+                color:white;
+                font-size: 1.8rem;
+                margin:$su $su*2;
             }
         }
     }
