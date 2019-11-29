@@ -38,14 +38,6 @@ body {
 
 .site-main {
     margin-top:0;
-
-    @media screen and (min-width:1024px) {
-        margin-top:436px;
-    }
-}
-
-section {
-    min-height: 50vh;
 }
 
 .cols-2 {

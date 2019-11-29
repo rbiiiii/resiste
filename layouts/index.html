@@ -29,14 +29,13 @@
 
         <main class="site-main" id="site-main">
           
+          {{ partial "section-description.html" . }}
           {{ partial "section-about.html" . }}
-          
-          {{ partial "section-technical.html" . }}
+          {{ partial "section-infos.html" . }}
           
         </main>
         
         {{ partial "site-footer.html" . }}
-    
         {{ partial "site-scripts.html" . }}
 
     </div>

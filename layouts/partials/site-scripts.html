@@ -1,4 +1,3 @@
-{{ $jquery := resources.Get "js/jquery.js" }}
 {{ $box := resources.Get "js/box.js" }}
 {{ $about := resources.Get "js/about.js" }}
 {{ $defaultJS := slice $box $about | resources.Concat "js/global.js" }}
