@@ -1,4 +1,4 @@
-baseURL = "http://exx1135-enprod.exxoss.net/"
+baseURL = "/"
 languageCode = "fr-be"
 title = "Résiste !"
 disableKinds = ["taxonomy", "taxonomyTerm", "sitemap", "RSS"]
