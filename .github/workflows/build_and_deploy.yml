@@ -23,12 +23,4 @@ jobs:
         run: hugo --minify
 
       - name: deploy to server
-        uses: AEnterprise/rsync-deploy@v1.0
-        env:
-          DEPLOY_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: "-z -v -r --delete-after"
-          SERVER_PORT: ${{ secrets.SERVER_PORT }}
-          FOLDER: "./public"
-          SERVER_IP: ${{ secrets.SERVER_IP }}
-          USERNAME: ${{ secrets.USERNAME }}
-          SERVER_DESTINATION: ${{ secrets.SERVER_DESTINATION }}
+        run: rsync -r --quiet --delete-after ./public/* ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_DESTINATION }}
