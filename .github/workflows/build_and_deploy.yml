@@ -9,9 +9,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1  # v2 does not have submodules option now
-        # with:
-        #   submodules: true
+      - name: Git checkout
+        uses: actions/checkout@v2
           
       - name: Setup NodeJS
         uses: actions/setup-node@v1
@@ -30,9 +29,12 @@ jobs:
       - name: Build
         run: hugo --minify
         
+      - name : list public  directory
+        run: ls public
+        
       - name: rsync deployments
         uses: contention/rsync-deployments@v1.0.0
         env: 
           DEPLOY_KEY: ${{secrets.DEPLOY_KEY}} 
         with: 
-          args: "-avz --delete-after ./public/ ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_DESTINATION }}"
+          args: "-avz --delete-after public/ ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_DESTINATION }}"
