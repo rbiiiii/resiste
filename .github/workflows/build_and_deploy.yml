@@ -27,4 +27,4 @@ jobs:
         env: 
           DEPLOY_KEY: ${{secrets.DEPLOY_KEY}} 
         with: 
-          args: "-avzr --delete --exclude .htaccess --exclude /node_modules/ ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_DESTINATION }}"
+          args: "-avzr --delete ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_DESTINATION }}"
