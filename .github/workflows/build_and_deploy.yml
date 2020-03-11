@@ -25,12 +25,9 @@ jobs:
       - name: Build
         run: hugo --minify
         
-      - name: Listing files
-        run: ls
-        
       - name: rsync deployments
         uses: contention/rsync-deployments@v1.0.0
         env: 
           DEPLOY_KEY: ${{secrets.DEPLOY_KEY}} 
         with: 
-          args: "-avzr --delete public/* ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_DESTINATION }}"
+          args: "-avzr --delete /public/* ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_DESTINATION }}"
