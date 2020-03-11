@@ -29,12 +29,25 @@ jobs:
       - name: Build
         run: hugo --minify
         
-      - name : list public  directory
-        run: ls public
+      - name: SSH setup
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          KNOWN_HOSTS: ${{ secrets.SERVER_IP }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "${KNOWN_HOSTS}" >> ~/.ssh/known_hosts
+          echo "${DEPLOY_KEY}" > ~/.ssh/my_rsync_key
+          echo "IdentityFile ~/.ssh/my_rsync_key" >> ~/.ssh/config
+          chmod -R 700 ~/.ssh
+
+      - name: Rsync deployment
+        run: |
+          rsync -avz -e ssh --delete public/ ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_DESTINATION }}
+
         
-      - name: rsync deployments
-        uses: contention/rsync-deployments@v1.0.0
-        env: 
-          DEPLOY_KEY: ${{secrets.DEPLOY_KEY}} 
-        with: 
-          args: "-avz --delete-after public/ ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_DESTINATION }}"
+      # - name: rsync deployments
+      #   uses: contention/rsync-deployments@v1.0.0
+      #   env: 
+      #     DEPLOY_KEY: ${{secrets.DEPLOY_KEY}} 
+      #   with: 
+      #     args: "-avz --delete-after public/ ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_DESTINATION }}"
