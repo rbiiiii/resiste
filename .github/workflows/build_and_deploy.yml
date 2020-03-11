@@ -30,4 +30,4 @@ jobs:
         env: 
           DEPLOY_KEY: ${{secrets.DEPLOY_KEY}} 
         with: 
-          args: "-avzr --delete /public/* ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_DESTINATION }}"
+          args: "-r --delete-after public/* ${{ secrets.USERNAME }}@${{ secrets.SERVER_IP }}:${{ secrets.SERVER_DESTINATION }}"
