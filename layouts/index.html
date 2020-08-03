@@ -16,7 +16,7 @@
     <meta property="og:site_name" content="{{ .Site.Title }}" />
     {{ $style := resources.Get "sass/main.scss" | resources.ToCSS | resources.PostCSS (dict "config" "postcss.config.js") | resources.Minify | resources.Fingerprint }}
     <link rel="stylesheet" type="text/css" href="{{ $style.Permalink | relURL }}">
-    <link href="https://fonts.googleapis.com/css?family=ABeeZee:400i&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap" rel="stylesheet">  
     {{ partial "site-favicon.html" . }}
   </head>
 
