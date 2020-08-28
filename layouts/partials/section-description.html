@@ -1,7 +1,14 @@
 <div id="section-description" arial-label="Description et achat">
     <div class="site-description__buttons">
-        <a href="#">Acheter le jeu</a>
-        <a href="#">Télécharger&nbsp;le guide&nbsp;pédagogique</a>
+        <a href="https://boutique.territoires-memoire.be/fr/outils-pedagogiques/57-resiste-.html" target="_blank" rel="noopener">Acheter le jeu</a>
+        <a href="#" id="guide">Télécharger&nbsp;le guide&nbsp;pédagogique</a>
+        <script>
+            var guide = document.getElementById("guide");
+            guide.onclick = function(e) {
+                e.preventDefault();
+                alert('Bientôt disponible, encore un peu de patience..')
+            }
+        </script>
     </div>
     <div class="cols-2 site_description__cols">
         <div class="cols-2__col">
