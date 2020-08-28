@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/rbiiiii/resiste#readme",
   "dependencies": {
-    "autoprefixer": "^9.7.2",
-    "postcss-cli": "^6.1.3"
+    "autoprefixer": "^9.8.6",
+    "postcss-cli": "^7.1.1"
   }
 }
