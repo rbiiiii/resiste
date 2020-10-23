@@ -3,15 +3,46 @@ h1, h2, h3, h4 {
     margin-bottom:0.25em;
     line-height:1.25;
     text-transform: uppercase;
+    letter-spacing:1px;
+    text-align: center;
+    margin-top:0;
 }
 
 h2 {
     font-size: 2.6rem;
-    margin-top:0;
+    color:$bleu-tm;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: $red;
 }
 
 p {
-    max-width: 32em;
+    margin:0 0 0.5em 0;
+
+    &:last-of-type {
+        margin-bottom:0;
+    }
+}
+
+ul {
+    margin:0 0 0.5em 0;
+    padding:0;
+    list-style: none;
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify{
+    text-align: justify;
+    hyphens:auto;
 }
 
 

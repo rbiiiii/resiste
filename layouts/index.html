@@ -19,28 +19,19 @@
     <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap" rel="stylesheet">  
     {{ partial "site-favicon.html" . }}
   </head>
-
 	<body id="root">
-
     {{ partial "site-icons.html" }}
-    
     <div class="site-wrapper">
-
         {{ partial "site-header.html" . }}
-
         <main class="site-main" id="site-main">
-          
-          {{ partial "section-description.html" . }}
+          {{ partial "section-intro.html" . }}
+          {{ partial "section-get-it.html" . }}
           {{ partial "section-about.html" . }}
+          {{ partial "section-you.html" . }}
           {{ partial "section-infos.html" . }}
-          
         </main>
-        
         {{ partial "site-footer.html" . }}
         {{ partial "site-scripts.html" . }}
-
     </div>
-
   </body>
-
 </html>

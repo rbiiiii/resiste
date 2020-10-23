@@ -1,0 +1,26 @@
+#section-infos {
+    max-width: $mw;
+    padding:0 $su 140px;
+    background: white url("../assets/img/resiste-frise-persos-small.jpg") no-repeat center bottom;
+    background-size: contain;
+    color:$bleu-tm;
+
+    @media screen and (min-width: 768px) {
+        align-items: flex-start;
+        margin:0 auto;
+        padding:0 $su 300px;
+        background-image:url("../assets/img/resiste-frise-persos.jpg");
+        background-position: 0 200%;
+        transition:background-position 400ms ease-in-out;
+
+        &.is-visible {
+            background-position: 0 100%;
+        }
+    }
+}
+
+.section-infos__soutiens {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

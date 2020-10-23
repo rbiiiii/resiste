@@ -1,0 +1,117 @@
+#section-you {
+    max-width: $mw;
+    margin:0 auto;
+
+    h2 {
+        margin-bottom:$su*2;
+    }
+
+    h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom:$su;
+
+        span {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            height: 1.5em;
+            width: 1.5em;
+            margin:0 0 $su 0;
+            background: white;
+            color: $red;
+            border-radius: 50%;
+            border: 2px dashed $red;
+            transform:scale(0);
+            transition:transform 250ms ease-in-out;
+
+            &.is-visible {
+                transform:scale(1.2);
+            }
+        }
+    }
+
+    @media screen and (min-width:768px) {
+
+        h2 {
+            margin-bottom:$su*4;
+        }
+        
+        h3 {
+            flex-direction: row;
+            justify-content: center;
+            margin-bottom:$su*2;
+            span {
+                margin:0 0.5em 0 0;
+            }
+        }
+
+    }
+}
+
+.section-you__video {
+    text-align: center;
+}
+
+.section-you__cols {
+    align-items:flex-start;
+
+    @media screen and (max-width:767px) {
+        align-items:center;
+
+        .cols-2__col:first-of-type {
+            width:80%;
+            margin-bottom:$su;
+        }
+    }
+}
+
+.section-you__television {
+    position: relative;
+}
+
+.section-you__television__video {
+    position: absolute;
+    top: 12%;
+    right: 28%;
+    bottom: 22%;
+    left: 6%;
+    overflow: hidden;
+
+    iframe {
+        width:100%;
+        height:100%;
+    }
+}
+
+.section-you__television__img {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    top: 0;
+    pointer-events: none;
+}
+
+.section-you__btn {
+    margin:$su*2 auto;
+    text-align: center;
+
+    a.button {
+        padding:0 0 0.5em 0;
+    }
+
+    figure {
+        margin:0;
+    }
+}
+
+.section-you__further {
+    display:block;
+    margin:$su*2 auto;
+    text-align: center;
+    
+    @media screen and (min-width:768px) {
+        font-size:125%;
+    }
+}

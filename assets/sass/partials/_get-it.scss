@@ -1,0 +1,132 @@
+#section-get-it {
+
+    @media screen and (min-width:1024px) {
+        align-items:center;
+        justify-content:center;
+    }
+}
+
+.section-get-it__buttons {
+    margin: $su*2 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width:400px) {
+        margin-top:$su*4;
+    }
+
+    @media screen and (min-width:560px) {
+        margin-top:$su*6;
+    }
+
+    @media screen and (min-width:1024px) {
+        flex-direction:row;
+        margin-top:$su*4;
+    }
+
+    a {
+        display:inline-block;
+        @include ff-b;
+        font-size:1.2rem;
+        background-color:$bleu-tm;
+        color:white;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        border: 3px dashed currentColor;
+        margin:$su;
+        padding: 0.5em;
+        box-shadow: 0 0 1.2em -0.1em $bleu-tm;
+        transform:translateY(0);
+        transition: box-shadow 150ms ease-out, transform 150ms ease-out;
+
+        &:hover, &:focus {
+            box-shadow: 0 0 1.8em -0.1em $bleu-tm;
+            transform:translateY(-4px);
+        }
+
+        &:active {
+            box-shadow: 0 0 0.6em -0.1em;
+            transform:translateY(0);
+        }
+
+        @media screen and (min-width:560px) {
+            font-size: 1.4rem;
+        }
+
+        @media screen and (min-width:1024px) {
+            font-size: 1.8rem;
+            margin:$su $su*2;
+        }
+    }
+}
+
+#get-the-game {
+    display: flex;
+    flex-direction: column;
+    max-width: $mw;
+    margin: $su auto;
+    padding:$su;
+    border: 5px dashed $bleu-tm;
+    
+    @media screen and (min-width:768px) {
+        align-items: center;
+        text-align: center;
+    }
+    
+    @media screen and (min-width:1024px) {
+    }
+
+    h2 {
+        text-align: center;
+        margin: $su/2 0 $su;
+    }
+}
+
+.get-the-game__icon-list {
+    max-width: $mw;
+    margin:0 auto;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: left;
+
+    p {
+        margin: 0 auto;
+        
+        @media screen and (min-width:1024px) {
+            font-size: 1.25rem;
+            padding: 0 $su 0 0;
+        }
+    }
+
+    li {
+        min-width: 200px;
+        max-width:440px;
+        margin:$su/2;
+        
+        @media screen and (min-width:768px) {
+            min-width: 240px;
+            justify-content: center;
+        }
+    }
+}
+
+.get-the-game__lots {
+    font-size:90%;
+    margin-top:$su;
+
+    li {
+
+        @media screen and (max-width: 600px) {
+            display:block;
+            margin:0;
+    
+            &:not(:last-child) {
+                margin-bottom:$su/2;
+            }
+        }
+    }
+}

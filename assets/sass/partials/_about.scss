@@ -1,5 +1,4 @@
 #section-about {
-    padding:$su*4 $su/2;
     background-image:url("../assets/img/resiste-tache-01.png"), url("../assets/img/resiste-tache-02.png"),  $bleu-gradient;
     background-position:-100px -100px, calc(100% + 100px) calc(100% + 100px),left top;
     background-repeat:no-repeat;
@@ -7,7 +6,6 @@
     transition:background-position 200ms ease-out;
 
     @media screen and (min-width: 1024px) {
-        padding:$su*4 $su;
         
         &.is-visible {
             background-image:url("../assets/img/resiste-tache-01.png"), url("../assets/img/resiste-tache-02.png"),  $bleu-gradient;
@@ -15,65 +13,177 @@
         }
     }
 
-    .cols-2 {
-        
-        @media screen and (min-width: 1024px) {
-            align-items:flex-start;
-            margin:0 auto;
+    p:not(:last-of-type) {
+        margin-bottom:1em;
+    }
+}
 
-            &:first-of-type {
-                width: 100%;
-                max-width: $mw;
-            }
-        }
+.section-about__cols {
+    align-items:flex-start;
+    padding: 0 auto;
+
+    @media screen and (min-width:768px) {
+        flex-direction: column;
+        align-items:center;
+    }
+
+    @media screen and (min-width:1500px) {
+        flex-direction:row;
+        justify-content:center;
     }
 
     .cols-2__col {
-        max-width: 640px;
         width:100%;
+        max-width:100%;
+        padding:0 $su;
 
-        &.section-about__text {
-            padding:0 $su/2;
-            order:2;
-            margin-top:$su;
+        &:first-of-type {
+            max-width:100%;
+            margin-bottom:$su;
         }
 
-        &.section-about__video {
-            padding:0 $su/2;
-        }
+        @media screen and (min-width:768px) {
+            max-width:640px;
 
-        @media screen and (min-width:1024px) {
-            
-            &.section-about__text {
-                margin-top:0;
-                margin-right:$su*2;
-                padding:0;
-                order:0;
+            &:first-of-type {
+                max-width:100%;
+                width:860px;
             }
+
+            &:nth-child(2) {
+                hyphens: auto;
+                text-align: justify;
+            }
+        }
+
+        @media screen and (min-width:1500px) {
             
-            &.section-about__video {
-                padding:$su/2 0 0 $su/4;
+            &:first-of-type {
+                flex:1;
+                max-width:860px;
+                margin-bottom:0;
+            }
+
+            &:nth-child(2) {
+                width:560px;
             }
         }
     }
+}
 
-    p {
-        margin: 0;
+.cards {
+    position:relative;
+    left:50%;
+    width:330px;
+    height:160px;
+    transform:translateX(-50%);
+
+    @media screen and (min-width:768px) {
+        width:330px;
+        height:360px;
+        left:0;
+        transform:translateX(0%);
+    }
+}
+
+.card {
+    position:absolute;
+    transform:translateX(120vw);
+    transition:all 800ms ease-out;
+    left:120vw;
+
+    &.card--01 {
+        z-index:4;
+    }
+
+    &.card--02 {
+        z-index:5;
+        top:35px;
+    }
+
+    &.card--03 {
+        z-index:6;
+        top:56px;
+    }
+
+    &.card--04 {
+        z-index:2;
+    }
+
+    &.card--05 {
+        z-index:3;
+        top:28px;
+    }
+
+    &.card--06 {
+        z-index:1;
+        top:45px;
+    }
+}
+
+.cards.is-visible {
+    
+    .card {
+        left:0;
+    }
+    .card.card--01 {
+        transform:translateX(0);
+    }
+
+    .card.card--02 {
+        transform:translateX(67px); 
+    }
+
+    .card.card--03 {
+        transform:translateX(96px); 
+    }
+
+    .card.card--04 {
+        transform:translateX(149px);
+    }
+    
+    .card.card--05 {
+        transform:translateX(180px); 
+    }
+
+    .card.card--06 {
+        transform:translateX(216px); 
+    }    
+
+    @media screen and (min-width:768px) {
+
+        .card.card--01 {
+            transform:translateX(0);
+        }
+    
+        .card.card--02 {
+            transform:translateX(168px); 
+        }
+    
+        .card.card--03 {
+            transform:translateX(240px); 
+        }
+    
+        .card.card--04 {
+            transform:translateX(372px);
+        }
         
-        @media screen and (min-width: 1024px) {
-            font-size: 1.25rem;
-            text-align: justify;
-            hyphens: auto;
+        .card.card--05 {
+            transform:translateX(450px); 
+        }
+    
+        .card.card--06 {
+            transform:translateX(540px); 
         }
     }
+}
 
-    iframe {
-        width:100%;
-        border:5px dashed white;
-        transition: border-color 100ms ease-out;
+$delay:0.25s;
+$cards: card--01 card--02 card--03 card--04 card--05 card--06;
 
-        &:hover, &:focus {
-            border-color:$red;
-        }
+@each $card in $cards {
+    $i: index($cards, $card);
+    .#{$card} { 
+        transition-delay: $i * $delay;
     }
 }

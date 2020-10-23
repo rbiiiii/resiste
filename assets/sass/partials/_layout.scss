@@ -40,20 +40,29 @@ body {
     margin-top:0;
 }
 
+.home-section {
+    padding:$su*4 $su;
+    
+    @media screen and (min-width:1024px) {
+        padding:$su*6 $su;
+    }
+}
+
 .cols-2 {
     display:flex;
     flex-direction: column;
     align-items:center;
     
-    @media screen and (min-width:1024px) {
+    @media screen and (min-width:768px) {
         flex-direction: row;
+        justify-content: space-between;
     }
 }
 
 .cols-2__col {
     width:auto;
 
-    @media screen and (min-width:1024px) {
-        width: 50%;
+    @media screen and (min-width:768px) {
+        width: calc(50% - #{$su});
     }
 }

@@ -1,5 +1,6 @@
 {{ $box := resources.Get "js/box.js" }}
-{{ $about := resources.Get "js/about.js" }}
-{{ $defaultJS := slice $box $about | resources.Concat "js/global.js" }}
+{{ $observer := resources.Get "js/observer.js" }}
+{{ $popup := resources.Get "js/popup.js" }}
+{{ $defaultJS := slice $box $observer $popup | resources.Concat "js/global.js" }}
 {{ $globalJS := $defaultJS | resources.Fingerprint }}
 <script src="{{ $globalJS.Permalink }}"></script>
