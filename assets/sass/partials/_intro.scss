@@ -1,21 +1,20 @@
 #section-intro {
     padding:15vw $su 0 $su;
+    max-width: $mw;
+    margin:0 auto;
+    font-size: 1.2rem;
     
     @media screen and (min-width:1024px) {
         padding-top:$su*4;
+        font-size: 1.4rem;
     }
 }
 
 .section-intro__text {
     display: block;
     margin: 0 auto $su auto;
-    font-size: 1.2rem;
     text-align: center;
     max-width: 34em;
-
-    @media screen and (min-width:1024px) {
-        font-size: 1.4rem;
-    }
 }
 
 #section-intro__icons {
@@ -27,6 +26,15 @@
     margin:$su*2 auto;
 
     li {
+        font-size: 1rem;
         flex-basis: 240px;
+    }
+}
+
+.section-intro__plus {
+    text-align: center;
+
+    li:not(:last-child) {
+        margin-bottom:0.25em;
     }
 }
