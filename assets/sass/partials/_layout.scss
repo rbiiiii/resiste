@@ -4,6 +4,11 @@
 	color: white;
 }
 
+*:focus {
+    outline:2px dashed $red;
+    outline-offset:5px;
+}
+
 html {
     height:100%;
     scroll-behavior: smooth;
