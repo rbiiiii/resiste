@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "fr-be"
 title = "Résiste !"
-disableKinds = ["taxonomy", "taxonomyTerm", "sitemap", "RSS"]
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 
 [params]
     description = "Le jeu coopératif pour résister ensemble et défendre la démocratie ! Une manière ludique et coopérative d’aborder la politique, la démocratie et la résistance à partir de 9 ans."
